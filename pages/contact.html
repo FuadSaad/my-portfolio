@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get in touch with Md Fuad Hossain Saad - CSE Student at DIU, Robotics enthusiast, and Full-Stack Developer">
+    <meta name="keywords" content="contact, get in touch, email, Fuad Hossain, DIU">
+
+    <title>Contact | Md Fuad Hossain Saad</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand">Portfolio</a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="experience.html" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-12" style="margin-top: 80px;">
+        <div class="container">
+            <h2 class="section-title scroll-animate">Get In Touch</h2>
+
+            <div class="contact-container">
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info scroll-animate">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:saad22205101463@diu.edu.bd">saad22205101463@diu.edu.bd</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h4>Portfolio Website</h4>
+                            <p><a href="https://sites.google.com/diu.edu.bd/fuadhossain" target="_blank"
+                                    rel="noopener">sites.google.com/diu.edu.bd/fuadhossain</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Dhaka, Bangladesh</p>
+                            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">
+                                Originally from Madaripur</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div class="contact-details">
+                            <h4>University</h4>
+                            <p>Daffodil International University (DIU)</p>
+                            <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">CSE
+                                Department</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>Social Media</h4>
+                            <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+                                <a href="https://github.com" target="_blank" rel="noopener" style="font-size: 1.5rem;"
+                                    title="GitHub">&#128187;</a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener" style="font-size: 1.5rem;"
+                                    title="LinkedIn">&#128101;</a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener" style="font-size: 1.5rem;"
+                                    title="Twitter">&#128038;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form-wrapper scroll-animate">
+                    <div class="success-message" id="successMessage">
+                        ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+                    </div>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                            <div class="form-error">Please enter your name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email *</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="john@example.com" required>
+                            <div class="form-error">Please enter a valid email address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-input"
+                                placeholder="Project Collaboration / Inquiry" required>
+                            <div class="form-error">Please enter a subject</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Your message here..." required></textarea>
+                            <div class="form-error">Please enter your message</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Send Message 📨
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- MAP SECTION -->
+            <div class="map-container scroll-animate">
+                <div class="map-placeholder">
+                    📍 Dhaka, Bangladesh
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">Portfolio</div>
+
+                <ul class="footer-social">
+                    <li><a href="https://github.com" target="_blank" rel="noopener" class="social-link"
+                            aria-label="GitHub" title="GitHub">
+                            <span>&#128187;</span>
+                        </a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link"
+                            aria-label="LinkedIn" title="LinkedIn">
+                            <span>&#128101;</span>
+                        </a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener" class="social-link"
+                            aria-label="Twitter" title="Twitter">
+                            <span>&#128038;</span>
+                        </a></li>
+                    <li><a href="mailto:saad22205101463@diu.edu.bd" class="social-link" aria-label="Email"
+                            title="Email">
+                            <span>&#128231;</span>
+                        </a></li>
+                </ul>
+
+                <p class="footer-text">&copy; 2025 Md Fuad Hossain Saad. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-to-top" aria-label="Scroll to top">
+        <span>&#8593;</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+
+</html>
