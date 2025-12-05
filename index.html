@@ -20,6 +20,269 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
+
+  <style>
+    /* Enhanced Typography Animations */
+    @keyframes gradientText {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-gradient-text {
+      background: linear-gradient(270deg, #6366f1, #06b6d4, #8b5cf6, #06b6d4, #6366f1);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 8s ease infinite;
+    }
+
+    .section-preview {
+      margin: 6rem 0;
+      animation: fadeInScale 0.8s ease-out;
+    }
+
+    .preview-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .preview-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .preview-subtitle {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      animation: slideInUp 0.6s ease-out 0.1s backwards;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(99, 102, 241, 0.05);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px);
+      background: rgba(99, 102, 241, 0.1);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+
+    .feature-description {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .project-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-preview-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.05));
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .project-preview-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(99, 102, 241, 0.5);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    }
+
+    .project-preview-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary-light);
+    }
+
+    .project-preview-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      color: var(--color-primary-light);
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 5rem 0;
+      margin: 6rem 0;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+      border-radius: 2rem;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .preview-title {
+        font-size: 2rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .cta-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -55,11 +318,242 @@
     </div>
 
     <div class="hero-content">
-      <h1 class="hero-title fade-in-up">Hi, I'm Md Fuad Hossain Saad</h1>
+      <h1 class="hero-title fade-in-up">Hi, I'm <span class="animated-gradient-text">Md Fuad Hossain Saad</span></h1>
       <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s;">CSE Student | Full-Stack Developer | Robotics
         Enthusiast | AI Researcher</p>
 
       <div class="hero-buttons fade-in-up" style="animation-delay: 0.4s;">
+        <a href="pages/projects.html" class="btn btn-primary">View My Work</a>
+        <a href="pages/contact.html" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="py-12" style="background: var(--color-bg-dark);">
+    <div class="container">
+      <div class="stats-grid scroll-animate">
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Major Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Leadership Roles</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Technical Skills</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">DIU</div>
+          <div class="stat-label">Student at DIU</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW SECTION -->
+  <section class="section-preview">
+    <div class="container">
+      <div class="preview-header">
+        <h2 class="preview-title"><span class="animated-gradient-text">About Me</span></h2>
+        <p class="preview-subtitle">Passionate CSE student at Daffodil International University with expertise in
+          robotics, AI, and full-stack development</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card scroll-animate">
+          <span class="feature-icon">🎓</span>
+          <h3 class="feature-title">Education</h3>
+          <p class="feature-description">
+            Currently pursuing B.Sc. in Computer Science & Engineering at Daffodil International University (DIU),
+            Dhaka. Previously studied at Gazipur Cantonment College and Rajendrapur Cantonment Board High School.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.1s;">
+          <span class="feature-icon">🤖</span>
+          <h3 class="feature-title">Robotics Leadership</h3>
+          <p class="feature-description">
+            Former Vice President and Assistant General Secretary of DIU Robotics Club. Leading organizational
+            initiatives, coordinating workshops, and driving technical innovation across the university.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.2s;">
+          <span class="feature-icon">🌍</span>
+          <h3 class="feature-title">Campus Ambassador</h3>
+          <p class="feature-description">
+            Representing prestigious organizations including BUET Robotics Society, ICT Olympiad Bangladesh, Techfest
+            IIT Bombay, and DUET CA Tech Fest. Building bridges between students and technology communities.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="pages/about.html" class="btn btn-primary">Learn More About Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS PREVIEW SECTION -->
+  <section class="section-preview" style="background: rgba(99, 102, 241, 0.03);">
+    <div class="container">
+      <div class="preview-header">
+        <h2 class="preview-title"><span class="animated-gradient-text">My Skills</span></h2>
+        <p class="preview-subtitle">Proficient in multiple programming languages, frameworks, and technologies across
+          full-stack development and AI/ML</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card scroll-animate">
+          <span class="feature-icon">⚛️</span>
+          <h3 class="feature-title">Frontend Development</h3>
+          <p class="feature-description">
+            <strong>React (95%)</strong>, HTML/CSS (90%), JavaScript (88%), TypeScript (85%). Building beautiful,
+            responsive user interfaces with modern frameworks and best practices.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.1s;">
+          <span class="feature-icon">🟢</span>
+          <h3 class="feature-title">Backend Development</h3>
+          <p class="feature-description">
+            <strong>Node.js (87%)</strong>, Python (82%), MongoDB (80%), PostgreSQL (78%). Creating robust server-side
+            applications and RESTful APIs with scalable architecture.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.2s;">
+          <span class="feature-icon">🧠</span>
+          <h3 class="feature-title">AI & Machine Learning</h3>
+          <p class="feature-description">
+            CNN, Transformers, Medical Imaging AI. Developing intelligent systems for brain tumor classification,
+            memory reconstruction, and data analysis using cutting-edge ML techniques.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.3s;">
+          <span class="feature-icon">🛠️</span>
+          <h3 class="feature-title">Tools & Technologies</h3>
+          <p class="feature-description">
+            <strong>Git/GitHub (92%)</strong>, Docker (83%), AWS (75%), REST APIs (88%). Proficient in version control,
+            containerization, cloud services, and modern development workflows.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="pages/skills.html" class="btn btn-primary">View All Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS PREVIEW SECTION -->
+  <section class="section-preview">
+    <div class="container">
+      <div class="preview-header">
+        <h2 class="preview-title"><span class="animated-gradient-text">Featured Projects</span></h2>
+        <p class="preview-subtitle">Innovative solutions in e-ticketing, AI healthcare, medical imaging, and compiler
+          design</p>
+      </div>
+
+      <div class="project-preview-grid">
+        <div class="project-preview-card scroll-animate">
+          <div class="project-preview-title">🚍 DIU Bus E-Ticketing System</div>
+          <p class="project-preview-desc">QR-based payment verification with GPS tracking for real-time bus monitoring
+            at Daffodil International University.</p>
+          <div>
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="project-preview-card scroll-animate" style="animation-delay: 0.1s;">
+          <div class="project-preview-title">🧠 MemoryKeeper - AI Companion</div>
+          <p class="project-preview-desc">AI-driven memory reconstruction for dementia patients using photos, audio,
+            and contextual storytelling with VR/AR integration.</p>
+          <div>
+            <span class="tech-tag">AI/ML</span>
+            <span class="tech-tag">VR/AR</span>
+            <span class="tech-tag">Privacy Tech</span>
+          </div>
+        </div>
+
+        <div class="project-preview-card scroll-animate" style="animation-delay: 0.2s;">
+          <div class="project-preview-title">🏥 Brain Tumor MRI Classification</div>
+          <p class="project-preview-desc">Hybrid CNN-Transformer-Capsule architecture for medical imaging with
+            Kaggle-ready pipeline and advanced visualization.</p>
+          <div>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">CNN</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="pages/projects.html" class="btn btn-primary">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE PREVIEW SECTION -->
+  <section class="section-preview" style="background: rgba(6, 182, 212, 0.03);">
+    <div class="container">
+      <div class="preview-header">
+        <h2 class="preview-title"><span class="animated-gradient-text">Leadership & Experience</span></h2>
+        <p class="preview-subtitle">Eight leadership roles across robotics clubs, programming communities, and campus
+          ambassador programs</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card scroll-animate">
+          <span class="feature-icon">👑</span>
+          <h3 class="feature-title">DIU Robotics Club</h3>
+          <p class="feature-description">
+            <strong>Vice President (Current)</strong> - Leading strategic initiatives, project development, and event
+            management. Formerly served as General Secretary and Assistant General Secretary.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.1s;">
+          <span class="feature-icon">💻</span>
+          <h3 class="feature-title">DIU CPC</h3>
+          <p class="feature-description">
+            <strong>Associate Member</strong> - Active participant in competitive programming, algorithm contests, and
+            coding challenges. Collaborating on problem-solving and knowledge sharing.
+          </p>
+        </div>
+
+        <div class="feature-card scroll-animate" style="animation-delay: 0.2s;">
+          <span class="feature-icon">🎖️</span>
+          <h3 class="feature-title">Campus Ambassador</h3>
+          <p class="feature-description">
+            Representing <strong>BUET Robotics Society</strong>, <strong>ICT Olympiad Bangladesh</strong>, <strong>IIT
+              Bombay Techfest</strong>, and <strong>DUET Tech Fest</strong>. Promoting technology awareness and student
+            participation.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="pages/experience.html" class="btn btn-primary">View Full Timeline</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title"><span class="animated-gradient-text">Let's Build Something Amazing Together</span></h2>
+      <p style="font-size: 1.125rem; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
+        I'm always open to discussing new projects, creative ideas, or opportunities to collaborate on innovative
+        technology solutions.
+      </p>
+      <div class="cta-buttons">
         <a href="pages/projects.html" class="btn btn-primary">View My Work</a>
         <a href="pages/contact.html" class="btn btn-secondary">Get In Touch</a>
       </div>
