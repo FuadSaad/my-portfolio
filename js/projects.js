@@ -1,73 +1,61 @@
 // ============================================
-// PROJECTS PAGE - Filtering & Modals with Fuad's Projects
+// PROJECTS PAGE - Software, Mobile & System Projects
 // ============================================
 
-// Fuad's actual projects
 const projects = [
     {
         id: 1,
-        title: "DIU Bus E-Ticketing System",
-        category: "web",
-        description: "QR-based payment verification with GPS tracking for live bus monitoring",
-        fullDescription: "Developed a comprehensive bus e-ticketing system for Daffodil International University featuring QR-based payment verification and real-time GPS tracking for live bus monitoring. Built using Node.js, Express, and MongoDB for the backend with React Native for the mobile frontend. Handled full architecture planning and implementation from scratch.",
-        tags: ["React Native", "Node.js", "MongoDB", "GPS", "QR Code"],
-        image: "placeholder-web",
-        link: "https://github.com",
+        title: "HealthScope BD — AI-Powered Epidemic Tracker & Health Companion",
+        category: "mobile",
+        typeBadge: "Mobile Application",
+        description: "AI-based symptom prediction and epidemic tracking mobile platform.",
+        fullDescription: "Developed a comprehensive mobile health application using Flutter and Dart with AI-based symptom prediction and epidemic tracking. Implemented Firebase Authentication, Cloud Firestore, disease reporting, real-time statistics, and epidemic heatmap features. Built healthcare utilities including nearby hospital search, emergency contacts, health insights, and dark/light mode UI.",
+        tags: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "OpenStreetMap", "AI Prediction"],
+        link: "https://github.com/FuadSaad",
         demo: null
     },
     {
         id: 2,
-        title: "MemoryKeeper - AI Companion",
-        category: "web",
-        description: "AI-driven memory reconstruction for dementia patients",
-        fullDescription: "Built an innovative AI companion designed to help dementia patients through memory reconstruction using photos, audio, and contextual storytelling. Features VR/AR integration for immersive experiences and privacy-first on-device processing. Developed with multi-phase workflow including clinical validation planning and monetization strategy.",
-        tags: ["AI", "Machine Learning", "VR/AR", "Privacy Tech"],
-        image: "placeholder-web",
-        link: "https://github.com",
+        title: "EzyHouse — Property Finding & Listing Application",
+        category: "mobile",
+        typeBadge: "Mobile Application",
+        description: "Smart property platform for homes, offices, P.G. accommodations, and shops.",
+        fullDescription: "Developed a Flutter-based property platform for homes, offices, P.G. accommodations, and shops with smart search and filtering. Implemented Firebase Authentication, Firestore, Storage, in-app messaging, and interactive maps for property management and communication. Built a responsive Glassmorphism UI/UX with smooth animations, lateral navigation, and integrated relocation/transport services.",
+        tags: ["Flutter", "Dart", "Firebase", "Provider", "Maps", "Glassmorphism UI"],
+        link: "https://github.com/FuadSaad",
         demo: null
     },
     {
         id: 3,
-        title: "Brain Tumor MRI Classification",
+        title: "HealthScope — Web-Based Health & Symptom Checker",
         category: "web",
-        description: "Hybrid CNN-Transformer-Capsule architecture for medical imaging",
-        fullDescription: "Developed a state-of-the-art brain tumor classification system using a hybrid architecture combining CNN, Transformer, and Capsule networks. Created a complete Kaggle-ready pipeline with advanced visualization tools including confusion matrices and detailed performance metrics for medical diagnosis.",
-        tags: ["Python", "TensorFlow", "CNN", "Transformers", "Medical AI"],
-        image: "placeholder-web",
-        link: "https://github.com",
+        typeBadge: "Web Application",
+        description: "Web health platform featuring symptom checking and health reporting.",
+        fullDescription: "Developed a web-based health platform featuring symptom checking, user authentication, profile management, and health reporting. Implemented PHP-based backend APIs and database integration for managing user data, reports, and application functionality.",
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"],
+        link: "https://github.com/FuadSaad",
         demo: null
     },
     {
         id: 4,
-        title: "Mini-C Subset Compiler",
-        category: "web",
-        description: "Compiler implementation using Flex and Bison",
-        fullDescription: "Implemented a complete compiler for a subset of the C programming language using Flex (lexical analyzer) and Bison (parser). Developed lexer, parser, Abstract Syntax Tree (AST) structure, and organized folder architecture following compiler design principles.",
-        tags: ["C", "Flex", "Bison", "Compiler Design"],
-        image: "placeholder-design",
-        link: "https://github.com",
+        title: "DIU Bus E-Ticketing System",
+        category: "systems",
+        typeBadge: "IoT & Web System",
+        description: "IoT-based GPS tracking and smart ticketing for campus transportation.",
+        fullDescription: "Designed and developed the DIU Bus E-Ticketing System with user-friendly UI/UX. Built an IoT-based GPS tracking device for real-time bus location monitoring. Integrated ticketing and tracking system for efficient and smart campus transportation.",
+        tags: ["IoT", "GPS Tracking", "UI/UX", "Transportation", "Embedded Systems"],
+        link: "https://github.com/FuadSaad",
         demo: null
     },
     {
         id: 5,
-        title: "School Management System",
-        category: "web",
-        description: "Complete system for managing students, courses, and grades",
-        fullDescription: "Built a comprehensive school management system with features for student enrollment, course management, grade tracking, and Excel-based data persistence. Designed with a clean, user-friendly interface and robust data management capabilities.",
-        tags: ["Java", "Excel Integration", "Database"],
-        image: "placeholder-web",
-        link: "https://github.com",
-        demo: null
-    },
-    {
-        id: 6,
-        title: "Ghoroya Project",
-        category: "web",
-        description: "Software-based service/utility solution",
-        fullDescription: "Developed Ghoroya, a comprehensive software solution designed to streamline service delivery and utility management. Features modern UI/UX design and efficient backend architecture.",
-        tags: ["Full-Stack", "Web Development", "UI/UX"],
-        image: "placeholder-web",
-        link: "https://sites.google.com/diu.edu.bd/fuadhossain",
+        title: "Egyptian Desert Simulation — OpenGL 2D Graphics",
+        category: "systems",
+        typeBadge: "Computer Graphics & Simulation",
+        description: "Interactive 2D Egyptian desert simulation featuring dynamic environment, traffic, and particle effects.",
+        fullDescription: "Developed an interactive 2D Egyptian desert simulation featuring pyramids, temples, obelisks, roads, Nile River, and modern infrastructure. Implemented dynamic day/night cycle, traffic lights, vehicle movement, camel-crossing detection, airplane and cruise-ship animations. Added interactive controls for simulation speed, play/pause, fireworks particle effects, and environment modes using keyboard input.",
+        tags: ["C", "OpenGL", "FreeGLUT", "GLU", "2D Graphics", "Computer Simulation", "Particles"],
+        link: "https://github.com/FuadSaad",
         demo: null
     }
 ];
@@ -81,26 +69,30 @@ function generatePlaceholderImage(type, title) {
 
     // Gradient background based on type
     const gradient = ctx.createLinearGradient(0, 0, 600, 400);
-    if (type === 'web') {
-        gradient.addColorStop(0, '#6366f1');
-        gradient.addColorStop(1, '#8b5cf6');
+    if (type === 'research') {
+        gradient.addColorStop(0, '#4f46e5');
+        gradient.addColorStop(1, '#7c3aed');
     } else if (type === 'mobile') {
-        gradient.addColorStop(0, '#06b6d4');
-        gradient.addColorStop(1, '#0891b2');
+        gradient.addColorStop(0, '#0284c7');
+        gradient.addColorStop(1, '#06b6d4');
+    } else if (title && (title.includes('Desert') || title.includes('OpenGL') || title.includes('Graphics'))) {
+        gradient.addColorStop(0, '#d97706');
+        gradient.addColorStop(1, '#ea580c');
     } else {
-        gradient.addColorStop(0, '#ec4899');
-        gradient.addColorStop(1, '#f43f5e');
+        gradient.addColorStop(0, '#0d9488');
+        gradient.addColorStop(1, '#10b981');
     }
 
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 600, 400);
 
     // Icon
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-    ctx.font = 'bold 100px Arial';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+    ctx.font = 'bold 110px Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(type === 'web' ? '🚀' : type === 'mobile' ? '📱' : '🎨', 300, 200);
+    const icon = type === 'research' ? '🔬' : type === 'mobile' ? '📱' : (title && (title.includes('Desert') || title.includes('Graphics')) ? '🏜️' : '💻');
+    ctx.fillText(icon, 300, 200);
 
     return canvas.toDataURL();
 }
@@ -125,6 +117,7 @@ function renderProjects(filter = 'all') {
         card.innerHTML = `
       <img src="${imageSrc}" alt="${project.title}" class="project-image">
       <div class="project-info">
+        <span class="badge ${project.category === 'research' ? 'badge-published' : 'badge-role'}">${project.typeBadge || 'Project'}</span>
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
         <div class="project-tags">
@@ -158,11 +151,12 @@ function openModal(project) {
 
     modalBody.innerHTML = `
     <img src="${imageSrc}" alt="${project.title}" style="width: 100%; border-radius: 1rem; margin-bottom: 1.5rem;">
+    <span class="badge ${project.category === 'research' ? 'badge-published' : 'badge-role'}" style="margin-bottom: 0.75rem;">${project.typeBadge || 'Project'}</span>
     <h2 style="color: var(--color-primary-light); margin-bottom: 1rem;">${project.title}</h2>
     <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">${project.fullDescription}</p>
     
     <div style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.75rem; font-size: 1.125rem;">Technologies Used:</h4>
+      <h4 style="margin-bottom: 0.75rem; font-size: 1.125rem;">Technologies & Methods:</h4>
       <div class="project-tags">
         ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
       </div>

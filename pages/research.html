@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Research, machine learning, mobile, and web development projects by Md Fuad Hossain Saad">
-    <meta name="keywords" content="projects, research, machine learning, flutter, mobile apps, web development, DIU">
+        content="Publications and ongoing research by Md Fuad Hossain Saad in Machine Learning, Association Rule Mining, Deep Learning, and Explainable AI">
+    <meta name="keywords" content="research, publications, machine learning, deep learning, explainable ai, QPAIN2026, ICBISD, DIU">
 
-    <title>Projects & Research | Md Fuad Hossain Saad</title>
+    <title>Publications & Research | Md Fuad Hossain Saad</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
@@ -45,26 +45,29 @@
         </div>
     </nav>
 
-    <!-- PROJECTS SECTION -->
+    <!-- RESEARCH SECTION -->
     <section class="py-12" style="margin-top: 80px;">
         <div class="container">
-            <h2 class="section-title scroll-animate">Software & System Projects</h2>
+            <h2 class="section-title scroll-animate">Publications & Research</h2>
+            <p style="text-align: center; color: var(--color-text-secondary); max-width: 700px; margin: -1.5rem auto 3rem auto; font-size: 1.05rem;">
+                Peer-reviewed conference publications and ongoing investigations in Machine Learning, Multimodal Deep Learning, and Explainable Artificial Intelligence (XAI).
+            </p>
 
             <!-- FILTER BUTTONS -->
             <div class="project-filters scroll-animate">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="systems">Graphics & Systems</button>
+                <button class="filter-btn active" data-filter="all">All Research</button>
+                <button class="filter-btn" data-filter="published">Published Papers</button>
+                <button class="filter-btn" data-filter="ongoing">Ongoing Works</button>
+                <button class="filter-btn" data-filter="xai">Explainable AI (XAI)</button>
             </div>
 
-            <!-- PROJECTS GRID -->
-            <div class="projects-grid" id="projectsGrid"></div>
+            <!-- RESEARCH GRID -->
+            <div class="research-grid" id="researchGrid"></div>
         </div>
     </section>
 
-    <!-- PROJECT MODAL -->
-    <div class="modal" id="projectModal">
+    <!-- RESEARCH MODAL -->
+    <div class="modal" id="researchModal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
             <div id="modalBody"></div>
@@ -107,7 +110,7 @@
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
-    <script src="../js/projects.js"></script>
+    <script src="../js/research.js"></script>
 </body>
 
 </html>
