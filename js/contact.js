@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+
+    if (!form) return;
 
     // Email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Validate individual field
     function validateField(field) {
         const formGroup = field.closest('.form-group');
+        if (!formGroup) return true;
         const value = field.value.trim();
 
         // Remove previous error state
@@ -43,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remove error on input
         input.addEventListener('input', function () {
             const formGroup = this.closest('.form-group');
-            if (formGroup.classList.contains('error')) {
+            if (formGroup && formGroup.classList.contains('error')) {
                 formGroup.classList.remove('error');
             }
         });
     });
 
-    // Form submission
+    // Form submission with real email dispatch via FormSubmit AJAX
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -61,30 +67,75 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // If form is valid, show success message
-        if (isValid) {
-            // Hide form
-            form.style.display = 'none';
-
-            // Show success message
-            successMessage.classList.add('show');
-
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // Reset form after 3 seconds and show it again
-            setTimeout(() => {
-                form.reset();
-                successMessage.classList.remove('show');
-                form.style.display = 'block';
-            }, 5000);
-        } else {
+        if (!isValid) {
             // Scroll to first error
             const firstError = form.querySelector('.form-group.error');
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
+            return;
         }
+
+        // UI Loading State
+        const originalBtnText = btnText ? btnText.textContent : 'Send Message 📨';
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnText) btnText.textContent = 'Sending Message... ⏳';
+        if (errorMessage) errorMessage.style.display = 'none';
+
+        // Prepare submission payload
+        const payload = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            subject: form.subject.value.trim(),
+            message: form.message.value.trim(),
+            _subject: `Portfolio Contact: ${form.subject.value.trim()} (from ${form.name.value.trim()})`,
+            _template: 'table',
+            _captcha: 'false'
+        };
+
+        // Send via FormSubmit AJAX API to contactwithfuad@gmail.com
+        fetch('https://formsubmit.co/ajax/contactwithfuad@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(async (response) => {
+            const data = await response.json().catch(() => ({}));
+            if (response.ok && (data.success === 'true' || data.success === true || response.status === 200)) {
+                // Success: Hide form, show success message
+                form.reset();
+                form.style.display = 'none';
+                if (errorMessage) errorMessage.style.display = 'none';
+                if (successMessage) {
+                    successMessage.classList.add('show');
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                // Show form again after 8 seconds in case user wants to send another message
+                setTimeout(() => {
+                    if (successMessage) successMessage.classList.remove('show');
+                    form.style.display = 'block';
+                }, 8000);
+            } else {
+                throw new Error(data.message || 'Submission failed');
+            }
+        })
+        .catch((error) => {
+            console.error('Contact Form Submission Error:', error);
+            if (errorMessage) {
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                alert('Failed to send message. Please email contactwithfuad@gmail.com directly.');
+            }
+        })
+        .finally(() => {
+            if (submitBtn) submitBtn.disabled = false;
+            if (btnText) btnText.textContent = originalBtnText;
+        });
     });
 
 });

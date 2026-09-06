@@ -108,7 +108,11 @@
                 <!-- CONTACT FORM -->
                 <div class="contact-form-wrapper scroll-animate">
                     <div class="success-message" id="successMessage">
-                        ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+                        ✅ Thank you! Your message has been sent successfully to Fuad's inbox. I'll get back to you soon!
+                    </div>
+
+                    <div id="errorMessage" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #f87171; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; text-align: center;">
+                        ❌ Failed to send message. Please email directly to <a href="mailto:contactwithfuad@gmail.com" style="color: #60a5fa; text-decoration: underline;">contactwithfuad@gmail.com</a>
                     </div>
 
                     <form id="contactForm" novalidate>
@@ -139,10 +143,13 @@
                             <div class="form-error">Please enter your message</div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            Send Message 📨
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">
+                            <span id="btnText">Send Message 📨</span>
                         </button>
                     </form>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--color-text-muted);">
+                        Or email directly: <a href="mailto:contactwithfuad@gmail.com" style="color: var(--color-primary-light);">contactwithfuad@gmail.com</a>
+                    </p>
                 </div>
             </div>
 
