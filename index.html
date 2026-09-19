@@ -13,9 +13,7 @@
   <title>Md Fuad Hossain Saad | CSE Graduate & Machine Learning Researcher</title>
 
   <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='50%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230b0f19'/%3E%3Cstop offset='100%25' stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='url(%23bg)' stroke='url(%23g)' stroke-width='3'/%3E%3Cpath d='M22 20 L11 32 L22 44' fill='none' stroke='url(%23g)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M42 20 L53 32 L42 44' fill='none' stroke='url(%23g)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M36 17 L28 47' fill='none' stroke='%2338bdf8' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/global.css">
@@ -69,20 +67,21 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(99, 102, 241, 0.4);
+      border: 3px solid rgba(96, 165, 250, 0.6);
       box-shadow:
-        0 0 30px rgba(99, 102, 241, 0.5),
-        0 0 60px rgba(6, 182, 212, 0.3);
+        0 0 35px rgba(37, 99, 235, 0.6),
+        0 0 70px rgba(124, 58, 237, 0.4);
       transition: all 0.5s ease;
       position: relative;
       z-index: 2;
     }
 
     .profile-photo:hover {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.08) rotate(3deg);
+      border-color: #fbbf24;
       box-shadow:
-        0 0 50px rgba(99, 102, 241, 0.7),
-        0 0 80px rgba(6, 182, 212, 0.5);
+        0 0 50px rgba(37, 99, 235, 0.8),
+        0 0 90px rgba(245, 158, 11, 0.45);
     }
 
     .profile-photo-glow {
@@ -93,7 +92,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent);
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.45), rgba(124, 58, 237, 0.3), transparent);
       filter: blur(25px);
       animation: pulseGlow 3s ease-in-out infinite;
     }
@@ -152,7 +151,7 @@
     }
 
     .animated-gradient-text {
-      background: linear-gradient(270deg, #6366f1, #06b6d4, #8b5cf6, #06b6d4, #6366f1);
+      background: linear-gradient(270deg, #3b82f6, #8b5cf6, #fbbf24, #60a5fa, #3b82f6);
       background-size: 400% 400%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -172,9 +171,13 @@
 
     .preview-title {
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 1rem;
       animation: slideInUp 0.6s ease-out;
+      background: var(--gradient-royal-text);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .preview-subtitle {
@@ -195,27 +198,43 @@
     .stat-card {
       text-align: center;
       padding: 2rem;
-      background: rgba(99, 102, 241, 0.05);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      border-radius: 1rem;
-      transition: all 0.3s ease;
+      background: var(--gradient-obsidian-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--color-card-border);
+      border-radius: 1.25rem;
+      transition: all var(--transition-base);
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #fbbf24);
+      opacity: 0.8;
     }
 
     .stat-card:hover {
       transform: translateY(-8px);
-      background: rgba(99, 102, 241, 0.1);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35), 0 0 20px rgba(245, 158, 11, 0.2);
     }
 
     .stat-number {
       font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+      background: var(--gradient-gold-text);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
     }
 
     .stat-label {
@@ -223,6 +242,7 @@
       color: var(--color-text-muted);
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: 600;
     }
 
     .feature-grid {
@@ -232,14 +252,16 @@
     }
 
     .feature-card {
-      background: rgba(30, 41, 59, 0.6);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--gradient-obsidian-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--color-card-border);
       border-radius: 1.5rem;
       padding: 2rem;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .feature-card::before {
@@ -248,20 +270,16 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
-      opacity: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1d4ed8, #7c3aed, #fbbf24);
+      opacity: 0.8;
       transition: opacity 0.4s ease;
     }
 
-    .feature-card:hover::before {
-      opacity: 1;
-    }
-
     .feature-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
+      transform: translateY(-8px) scale(1.01);
+      border-color: var(--color-card-border-hover);
+      box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.35);
     }
 
     .feature-icon {
@@ -269,15 +287,16 @@
       margin-bottom: 1.5rem;
       display: block;
       transition: transform 0.4s ease;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
     }
 
     .feature-card:hover .feature-icon {
-      transform: scale(1.2) rotate(5deg);
+      transform: scale(1.15) rotate(4deg);
     }
 
     .feature-title {
       font-size: 1.5rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 1rem;
       color: var(--color-text-primary);
     }
@@ -296,59 +315,96 @@
     }
 
     .project-preview-card {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.05));
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      background: var(--gradient-obsidian-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--color-card-border);
       border-radius: 1.5rem;
       padding: 2rem;
       transition: all 0.4s ease;
       cursor: pointer;
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-preview-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #fbbf24);
+      opacity: 0.85;
     }
 
     .project-preview-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(99, 102, 241, 0.5);
-      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+      border-color: var(--color-card-border-hover);
+      box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.35);
     }
 
     .project-preview-title {
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0.75rem;
-      color: var(--color-primary-light);
+      color: #60a5fa;
     }
 
     .project-preview-desc {
       font-size: 0.875rem;
       color: var(--color-text-secondary);
       margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
     .tech-tag {
       display: inline-block;
       padding: 0.25rem 0.75rem;
-      background: rgba(99, 102, 241, 0.15);
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.35);
       border-radius: 9999px;
       font-size: 0.75rem;
-      color: var(--color-primary-light);
+      color: #93c5fd;
+      font-weight: 600;
       margin-right: 0.5rem;
       margin-bottom: 0.5rem;
     }
 
     .cta-section {
       text-align: center;
-      padding: 5rem 0;
+      padding: 5rem 2rem;
       margin: 6rem 0;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+      background: var(--gradient-obsidian-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-radius: 2rem;
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      border: 1px solid var(--color-card-border);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(37, 99, 235, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1d4ed8, #7c3aed, #fbbf24);
     }
 
     .cta-title {
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 1.5rem;
       animation: slideInUp 0.6s ease-out;
+      background: var(--gradient-royal-text);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .cta-buttons {
@@ -423,8 +479,14 @@
         </div>
       </div>
 
+      <!-- Royal Prestige Academic Badge -->
+      <div class="hero-badge fade-in-up" style="animation-delay: 0.1s;">
+        <span class="hero-badge-dot"></span>
+        <span>DIU CSE Graduate &bull; AI &amp; Robotics Researcher &bull; Software Engineer</span>
+      </div>
+
       <h1 class="hero-title fade-in-up">Hi, I'm <span class="animated-gradient-text">Md Fuad Hossain Saad</span></h1>
-      <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s;">CSE Graduate | Research Enthusiast | Machine Learning & Data Analytics</p>
+      <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s;">Advancing Intelligent Computing through Machine Learning, Robotics &amp; Modern Software Architecture</p>
 
       <div class="hero-buttons fade-in-up" style="animation-delay: 0.4s;">
         <a href="pages/projects.html" class="btn btn-primary">View My Work & Research</a>
@@ -776,11 +838,11 @@
         canvas.height = 400;
         const ctx = canvas.getContext('2d');
 
-        // Gradient background
+        // Royal gradient background
         const gradient = ctx.createLinearGradient(0, 0, 400, 400);
-        gradient.addColorStop(0, '#6366f1');
-        gradient.addColorStop(0.5, '#8b5cf6');
-        gradient.addColorStop(1, '#06b6d4');
+        gradient.addColorStop(0, '#1d4ed8');
+        gradient.addColorStop(0.5, '#7c3aed');
+        gradient.addColorStop(1, '#fbbf24');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 400, 400);
 

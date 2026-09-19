@@ -70,17 +70,17 @@ function generatePlaceholderImage(type, title) {
     // Gradient background based on type
     const gradient = ctx.createLinearGradient(0, 0, 600, 400);
     if (type === 'research') {
-        gradient.addColorStop(0, '#4f46e5');
+        gradient.addColorStop(0, '#1d4ed8');
         gradient.addColorStop(1, '#7c3aed');
     } else if (type === 'mobile') {
-        gradient.addColorStop(0, '#0284c7');
-        gradient.addColorStop(1, '#06b6d4');
+        gradient.addColorStop(0, '#1e3a8a');
+        gradient.addColorStop(1, '#3b82f6');
     } else if (title && (title.includes('Desert') || title.includes('OpenGL') || title.includes('Graphics'))) {
-        gradient.addColorStop(0, '#d97706');
-        gradient.addColorStop(1, '#ea580c');
+        gradient.addColorStop(0, '#92400e');
+        gradient.addColorStop(1, '#d97706');
     } else {
-        gradient.addColorStop(0, '#0d9488');
-        gradient.addColorStop(1, '#10b981');
+        gradient.addColorStop(0, '#065f46');
+        gradient.addColorStop(1, '#059669');
     }
 
     ctx.fillStyle = gradient;

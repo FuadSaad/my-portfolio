@@ -99,11 +99,11 @@ function generateResearchImage(status, title) {
 
     const gradient = ctx.createLinearGradient(0, 0, 600, 400);
     if (status === 'published') {
-        gradient.addColorStop(0, '#059669');
-        gradient.addColorStop(1, '#0d9488');
+        gradient.addColorStop(0, '#065f46');
+        gradient.addColorStop(1, '#059669');
     } else {
-        gradient.addColorStop(0, '#4338ca');
-        gradient.addColorStop(1, '#6366f1');
+        gradient.addColorStop(0, '#1d4ed8');
+        gradient.addColorStop(1, '#7c3aed');
     }
 
     ctx.fillStyle = gradient;
