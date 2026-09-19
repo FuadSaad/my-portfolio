@@ -462,13 +462,10 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION WITH SUBTLE 3D WEBGL GRAPHICS -->
   <section class="hero">
-    <div class="floating-shapes">
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-    </div>
+    <!-- Three.js 3D Subtle Ambient Canvas -->
+    <canvas id="hero-3d-canvas" class="hero-3d-canvas"></canvas>
 
     <div class="hero-content">
       <!-- Profile Photo Section -->
@@ -488,7 +485,7 @@
       <h1 class="hero-title fade-in-up">Hi, I'm <span class="animated-gradient-text">Md Fuad Hossain Saad</span></h1>
       <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s;">Advancing Intelligent Computing through Machine Learning, Robotics &amp; Modern Software Architecture</p>
 
-      <div class="hero-buttons fade-in-up" style="animation-delay: 0.4s;">
+      <div class="hero-buttons fade-in-up" style="animation-delay: 0.3s;">
         <a href="pages/projects.html" class="btn btn-primary">View My Work & Research</a>
         <a href="pages/contact.html" class="btn btn-secondary">Get In Touch</a>
       </div>
@@ -499,21 +496,64 @@
   <section class="py-12" style="background: var(--color-bg-dark);">
     <div class="container">
       <div class="stats-grid scroll-animate">
-        <div class="stat-card">
+        <div class="stat-card" data-tilt>
           <div class="stat-number">2</div>
           <div class="stat-label">Published Papers</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-tilt>
           <div class="stat-number">3+</div>
-          <div class="stat-label">Ongoing Research</div>
+          <div class="stat-label">Ongoing Works</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-tilt>
           <div class="stat-number">3.51</div>
           <div class="stat-label">DIU B.Sc. CGPA</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card" data-tilt>
           <div class="stat-number">5+</div>
           <div class="stat-label">Leadership Roles</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING ARCHITECTURE SPOTLIGHT (3D Interactive Terminal) -->
+  <section class="py-12" style="background: linear-gradient(180deg, var(--color-bg-dark) 0%, rgba(8, 13, 36, 0.95) 100%);">
+    <div class="container">
+      <div class="section-title scroll-animate">
+        <h2>Engineering Architecture</h2>
+        <p>Core algorithmic foundations, machine learning pipelines, and software technology stack</p>
+      </div>
+
+      <div class="dev-terminal-3d-container scroll-animate" style="margin-top: 2rem;">
+        <div class="dev-terminal" data-tilt>
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-title">
+              <span class="terminal-icon">⚡</span> fuad@system-core: ~/portfolio/architecture.ts
+            </div>
+            <button class="terminal-copy-btn" id="copyCodeBtn" type="button" title="Copy Architecture Snippet">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span id="copyBtnText">Copy</span>
+            </button>
+          </div>
+          <div class="terminal-body">
+            <pre><code id="codeSnippet"><span class="code-comment">// CSE Graduate &bull; Machine Learning Researcher &bull; Software Engineer</span>
+<span class="code-keyword">const</span> <span class="code-var">engineer</span>: <span class="code-type">SoftwareEngineer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">'Md Fuad Hossain Saad'</span>,
+  <span class="code-prop">institution</span>: <span class="code-string">'Daffodil International University (CGPA 3.51)'</span>,
+  <span class="code-prop">specialization</span>: [<span class="code-string">'Deep Learning'</span>, <span class="code-string">'Explainable AI'</span>, <span class="code-string">'Robotics Systems'</span>],
+  <span class="code-prop">research</span>: [<span class="code-string">'NeuroGAT (3D CNN-GNN)'</span>, <span class="code-string">'QPAIN2026'</span>, <span class="code-string">'ICBISD'</span>],
+  <span class="code-prop">stack</span>: {
+    <span class="code-prop">languages</span>: [<span class="code-string">'Python'</span>, <span class="code-string">'C/C++'</span>, <span class="code-string">'Dart'</span>, <span class="code-string">'Java'</span>, <span class="code-string">'SQL'</span>],
+    <span class="code-prop">frameworks</span>: [<span class="code-string">'PyTorch'</span>, <span class="code-string">'Flutter'</span>, <span class="code-string">'OpenGL (2D/3D)'</span>, <span class="code-string">'Git'</span>, <span class="code-string">'Firebase'</span>]
+  },
+  <span class="code-prop">status</span>: <span class="code-string">'Architecting High-Performance Intelligent Software Systems'</span>
+};<span class="code-cursor"></span></code></pre>
+          </div>
         </div>
       </div>
     </div>
@@ -821,7 +861,12 @@
     <span>&#8593;</span>
   </button>
 
+  <!-- Three.js 3D Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <!-- Scripts -->
+  <script src="js/tilt-3d.js"></script>
+  <script src="js/three-hero.js"></script>
   <script src="js/main.js"></script>
   <script src="js/home.js"></script>
 
