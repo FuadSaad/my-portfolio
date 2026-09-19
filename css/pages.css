@@ -699,6 +699,10 @@
         gap: 1rem;
     }
 
+    .stats-grid .stat-card:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+
     .stat-card {
         padding: 1.25rem 1rem;
     }

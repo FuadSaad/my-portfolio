@@ -190,14 +190,24 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
       margin: 3rem 0;
     }
 
+    @media (min-width: 1100px) {
+      .stats-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
     .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1.25rem;
       background: var(--gradient-obsidian-card);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -207,6 +217,9 @@
       box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
     .stat-card::before {
@@ -218,31 +231,62 @@
       height: 3px;
       background: linear-gradient(90deg, #3b82f6, #fbbf24);
       opacity: 0.8;
+      transition: all 0.3s ease;
     }
 
     .stat-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(245, 158, 11, 0.45);
-      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35), 0 0 20px rgba(245, 158, 11, 0.2);
+      border-color: rgba(245, 158, 11, 0.55);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35), 0 0 25px rgba(245, 158, 11, 0.25);
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+      height: 4px;
+    }
+
+    .stat-card:hover .stat-label {
+      color: #cbd5e1;
     }
 
     .stat-number {
-      font-size: 3rem;
+      font-size: 2.75rem;
       font-weight: 800;
       background: var(--gradient-gold-text);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       font-family: var(--font-heading);
     }
 
     .stat-label {
-      font-size: 0.875rem;
+      font-size: 0.82rem;
       color: var(--color-text-muted);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .stat-card-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      color: #38bdf8;
+      margin-top: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover .stat-card-hint {
+      opacity: 1;
+      color: #fbbf24;
+      transform: translateX(3px);
     }
 
     .feature-grid {
@@ -496,22 +540,31 @@
   <section class="py-12" style="background: var(--color-bg-dark);">
     <div class="container">
       <div class="stats-grid scroll-animate">
-        <div class="stat-card" data-tilt>
+        <a href="pages/research.html" class="stat-card" data-tilt title="View Published Papers">
           <div class="stat-number">2</div>
           <div class="stat-label">Published Papers</div>
-        </div>
-        <div class="stat-card" data-tilt>
+          <div class="stat-card-hint">View Papers &rarr;</div>
+        </a>
+        <a href="pages/research.html" class="stat-card" data-tilt title="View Ongoing Research">
           <div class="stat-number">3+</div>
           <div class="stat-label">Ongoing Works</div>
-        </div>
-        <div class="stat-card" data-tilt>
+          <div class="stat-card-hint">View Research &rarr;</div>
+        </a>
+        <a href="pages/projects.html" class="stat-card" data-tilt title="Explore Completed Projects">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Projects Built</div>
+          <div class="stat-card-hint">Explore Work &rarr;</div>
+        </a>
+        <a href="pages/about.html" class="stat-card" data-tilt title="View Academic Credentials">
           <div class="stat-number">3.51</div>
           <div class="stat-label">DIU B.Sc. CGPA</div>
-        </div>
-        <div class="stat-card" data-tilt>
+          <div class="stat-card-hint">Academic Bio &rarr;</div>
+        </a>
+        <a href="pages/experience.html" class="stat-card" data-tilt title="View Leadership Roles">
           <div class="stat-number">5+</div>
           <div class="stat-label">Leadership Roles</div>
-        </div>
+          <div class="stat-card-hint">View Roles &rarr;</div>
+        </a>
       </div>
     </div>
   </section>
