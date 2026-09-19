@@ -8,6 +8,7 @@ const projects = [
         title: "HealthScope BD — AI-Powered Epidemic Tracker & Health Companion",
         category: "mobile",
         typeBadge: "Mobile Application",
+        image: "../images/projects/healthscope-bd.jpg",
         description: "AI-based symptom prediction and epidemic tracking mobile platform.",
         fullDescription: "Developed a comprehensive mobile health application using Flutter and Dart with AI-based symptom prediction and epidemic tracking. Implemented Firebase Authentication, Cloud Firestore, disease reporting, real-time statistics, and epidemic heatmap features. Built healthcare utilities including nearby hospital search, emergency contacts, health insights, and dark/light mode UI.",
         tags: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "OpenStreetMap", "AI Prediction"],
@@ -19,6 +20,7 @@ const projects = [
         title: "EzyHouse — Property Finding & Listing Application",
         category: "mobile",
         typeBadge: "Mobile Application",
+        image: "../images/projects/ezyhouse.jpg",
         description: "Smart property platform for homes, offices, P.G. accommodations, and shops.",
         fullDescription: "Developed a Flutter-based property platform for homes, offices, P.G. accommodations, and shops with smart search and filtering. Implemented Firebase Authentication, Firestore, Storage, in-app messaging, and interactive maps for property management and communication. Built a responsive Glassmorphism UI/UX with smooth animations, lateral navigation, and integrated relocation/transport services.",
         tags: ["Flutter", "Dart", "Firebase", "Provider", "Maps", "Glassmorphism UI"],
@@ -30,6 +32,7 @@ const projects = [
         title: "HealthScope — Web-Based Health & Symptom Checker",
         category: "web",
         typeBadge: "Web Application",
+        image: "../images/projects/healthscope-web.jpg",
         description: "Web health platform featuring symptom checking and health reporting.",
         fullDescription: "Developed a web-based health platform featuring symptom checking, user authentication, profile management, and health reporting. Implemented PHP-based backend APIs and database integration for managing user data, reports, and application functionality.",
         tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"],
@@ -41,6 +44,7 @@ const projects = [
         title: "DIU Bus E-Ticketing System",
         category: "systems",
         typeBadge: "IoT & Web System",
+        image: "../images/projects/diu-bus.jpg",
         description: "IoT-based GPS tracking and smart ticketing for campus transportation.",
         fullDescription: "Designed and developed the DIU Bus E-Ticketing System with user-friendly UI/UX. Built an IoT-based GPS tracking device for real-time bus location monitoring. Integrated ticketing and tracking system for efficient and smart campus transportation.",
         tags: ["IoT", "GPS Tracking", "UI/UX", "Transportation", "Embedded Systems"],
@@ -52,6 +56,7 @@ const projects = [
         title: "Egyptian Desert Simulation — OpenGL 2D Graphics",
         category: "systems",
         typeBadge: "Computer Graphics & Simulation",
+        image: "../images/projects/egyptian-simulation.jpg",
         description: "Interactive 2D Egyptian desert simulation featuring dynamic environment, traffic, and particle effects.",
         fullDescription: "Developed an interactive 2D Egyptian desert simulation featuring pyramids, temples, obelisks, roads, Nile River, and modern infrastructure. Implemented dynamic day/night cycle, traffic lights, vehicle movement, camel-crossing detection, airplane and cruise-ship animations. Added interactive controls for simulation speed, play/pause, fireworks particle effects, and environment modes using keyboard input.",
         tags: ["C", "OpenGL", "FreeGLUT", "GLU", "2D Graphics", "Computer Simulation", "Particles"],
@@ -112,10 +117,10 @@ function renderProjects(filter = 'all') {
         card.style.animationDelay = `${index * 0.1}s`;
         card.setAttribute('data-project-id', project.id);
 
-        const imageSrc = generatePlaceholderImage(project.category, project.title);
+        const imageSrc = project.image || generatePlaceholderImage(project.category, project.title);
 
         card.innerHTML = `
-      <img src="${imageSrc}" alt="${project.title}" class="project-image">
+      <img src="${imageSrc}" alt="${project.title}" class="project-image" onerror="this.onerror=null; this.src=generatePlaceholderImage('${project.category}', '${project.title}');">
       <div class="project-info">
         <span class="badge ${project.category === 'research' ? 'badge-published' : 'badge-role'}">${project.typeBadge || 'Project'}</span>
         <h3 class="project-title">${project.title}</h3>
@@ -147,10 +152,10 @@ function openModal(project) {
     const modal = document.getElementById('projectModal');
     const modalBody = document.getElementById('modalBody');
 
-    const imageSrc = generatePlaceholderImage(project.category, project.title);
+    const imageSrc = project.image || generatePlaceholderImage(project.category, project.title);
 
     modalBody.innerHTML = `
-    <img src="${imageSrc}" alt="${project.title}" style="width: 100%; border-radius: 1rem; margin-bottom: 1.5rem;">
+    <img src="${imageSrc}" alt="${project.title}" style="width: 100%; border-radius: 1rem; margin-bottom: 1.5rem; max-height: 380px; object-fit: cover;" onerror="this.onerror=null; this.src=generatePlaceholderImage('${project.category}', '${project.title}');">
     <span class="badge ${project.category === 'research' ? 'badge-published' : 'badge-role'}" style="margin-bottom: 0.75rem;">${project.typeBadge || 'Project'}</span>
     <h2 style="color: var(--color-primary-light); margin-bottom: 1rem;">${project.title}</h2>
     <p style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">${project.fullDescription}</p>
