@@ -124,8 +124,8 @@ my-portfolio/
 │   ├── experience.html   # Leadership & extracurricular timeline
 │   ├── projects.html     # Software, mobile & system projects
 │   ├── research.html     # Publications & ongoing research showcase
-│   └── skills.html       # Categorized technical competencies & proficiency bars
-├── fuad.jpg              # Profile picture
+├── 1.png                 # Executive profile photo (Conference & Podium)
+├── fuad.jpg              # Casual profile picture
 ├── index.html            # Main home page with featured spotlight sections
 └── README.md             # Project documentation
 ```
