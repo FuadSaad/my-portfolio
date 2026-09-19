@@ -67,21 +67,21 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(96, 165, 250, 0.6);
+      border: 2px solid rgba(56, 189, 248, 0.45);
       box-shadow:
-        0 0 35px rgba(37, 99, 235, 0.6),
-        0 0 70px rgba(124, 58, 237, 0.4);
-      transition: all 0.5s ease;
+        0 10px 25px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(14, 165, 233, 0.2);
+      transition: all 0.4s ease;
       position: relative;
       z-index: 2;
     }
 
     .profile-photo:hover {
-      transform: scale(1.08) rotate(3deg);
-      border-color: #fbbf24;
+      transform: scale(1.04);
+      border-color: #38bdf8;
       box-shadow:
-        0 0 50px rgba(37, 99, 235, 0.8),
-        0 0 90px rgba(245, 158, 11, 0.45);
+        0 14px 30px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(56, 189, 248, 0.35);
     }
 
     .profile-photo-glow {
@@ -92,44 +92,15 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.45), rgba(124, 58, 237, 0.3), transparent);
-      filter: blur(25px);
-      animation: pulseGlow 3s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.12), transparent 70%);
+      filter: blur(20px);
     }
 
-    @keyframes pulseGlow {
-
-      0%,
-      100% {
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(1);
-      }
-
-      50% {
-        opacity: 0.9;
-        transform: translate(-50%, -50%) scale(1.2);
-      }
-    }
-
-    /* Enhanced Typography Animations */
-    @keyframes gradientText {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
+    /* Clean Developer Typography */
     @keyframes fadeInScale {
       from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.96);
       }
 
       to {
@@ -141,7 +112,7 @@
     @keyframes slideInUp {
       from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
       }
 
       to {
@@ -151,12 +122,10 @@
     }
 
     .animated-gradient-text {
-      background: linear-gradient(270deg, #3b82f6, #8b5cf6, #fbbf24, #60a5fa, #3b82f6);
-      background-size: 400% 400%;
+      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: gradientText 8s ease infinite;
     }
 
     .section-preview {
@@ -174,10 +143,7 @@
       font-weight: 800;
       margin-bottom: 1rem;
       animation: slideInUp 0.6s ease-out;
-      background: var(--gradient-royal-text);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
     }
 
     .preview-subtitle {
@@ -228,21 +194,21 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #3b82f6, #fbbf24);
-      opacity: 0.8;
+      height: 2px;
+      background: #0ea5e9;
+      opacity: 0.85;
       transition: all 0.3s ease;
     }
 
     .stat-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(245, 158, 11, 0.55);
-      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35), 0 0 25px rgba(245, 158, 11, 0.25);
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 15px rgba(14, 165, 233, 0.15);
     }
 
     .stat-card:hover::before {
       opacity: 1;
-      height: 4px;
+      height: 3px;
     }
 
     .stat-card:hover .stat-label {
@@ -252,10 +218,7 @@
     .stat-number {
       font-size: 2.75rem;
       font-weight: 800;
-      background: var(--gradient-gold-text);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #f8fafc;
       margin-bottom: 0.4rem;
       font-family: var(--font-heading);
     }
@@ -279,13 +242,14 @@
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      opacity: 0.75;
+      opacity: 0.85;
+      font-family: 'Fira Code', monospace;
       transition: all 0.3s ease;
     }
 
     .stat-card:hover .stat-card-hint {
       opacity: 1;
-      color: #fbbf24;
+      color: #7dd3fc;
       transform: translateX(3px);
     }
 
@@ -305,7 +269,7 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
     .feature-card::before {
@@ -314,16 +278,16 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #1d4ed8, #7c3aed, #fbbf24);
-      opacity: 0.8;
+      height: 2px;
+      background: #0ea5e9;
+      opacity: 0.85;
       transition: opacity 0.4s ease;
     }
 
     .feature-card:hover {
-      transform: translateY(-8px) scale(1.01);
+      transform: translateY(-5px);
       border-color: var(--color-card-border-hover);
-      box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(14, 165, 233, 0.15);
     }
 
     .feature-icon {
@@ -331,11 +295,11 @@
       margin-bottom: 1.5rem;
       display: block;
       transition: transform 0.4s ease;
-      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
+      filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.3));
     }
 
     .feature-card:hover .feature-icon {
-      transform: scale(1.15) rotate(4deg);
+      transform: scale(1.1) rotate(3deg);
     }
 
     .feature-title {
@@ -367,7 +331,7 @@
       padding: 2rem;
       transition: all 0.4s ease;
       cursor: pointer;
-      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
       position: relative;
       overflow: hidden;
     }
@@ -378,22 +342,22 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #fbbf24);
+      height: 2px;
+      background: #0ea5e9;
       opacity: 0.85;
     }
 
     .project-preview-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
       border-color: var(--color-card-border-hover);
-      box-shadow: 0 20px 45px -10px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7);
     }
 
     .project-preview-title {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
-      color: #60a5fa;
+      color: #38bdf8;
     }
 
     .project-preview-desc {
@@ -405,13 +369,14 @@
 
     .tech-tag {
       display: inline-block;
-      padding: 0.25rem 0.75rem;
-      background: rgba(37, 99, 235, 0.12);
-      border: 1px solid rgba(59, 130, 246, 0.35);
-      border-radius: 9999px;
+      padding: 0.2rem 0.65rem;
+      background: rgba(14, 165, 233, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 4px;
       font-size: 0.75rem;
-      color: #93c5fd;
-      font-weight: 600;
+      color: #7dd3fc;
+      font-weight: 500;
+      font-family: 'Fira Code', monospace;
       margin-right: 0.5rem;
       margin-bottom: 0.5rem;
     }
@@ -425,7 +390,7 @@
       -webkit-backdrop-filter: blur(16px);
       border-radius: 2rem;
       border: 1px solid var(--color-card-border);
-      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(37, 99, 235, 0.15);
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8);
       position: relative;
       overflow: hidden;
     }
@@ -436,8 +401,8 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #1d4ed8, #7c3aed, #fbbf24);
+      height: 2px;
+      background: #0ea5e9;
     }
 
     .cta-title {
@@ -445,10 +410,7 @@
       font-weight: 800;
       margin-bottom: 1.5rem;
       animation: slideInUp 0.6s ease-out;
-      background: var(--gradient-royal-text);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
     }
 
     .cta-buttons {
@@ -530,8 +492,7 @@
       <p class="hero-subtitle fade-in-up" style="animation-delay: 0.2s;">Advancing Intelligent Computing through Machine Learning, Robotics &amp; Modern Software Architecture</p>
 
       <div class="hero-buttons fade-in-up" style="animation-delay: 0.3s;">
-        <a href="pages/projects.html" class="btn btn-primary">View My Work & Research</a>
-        <a href="pages/contact.html" class="btn btn-secondary">Get In Touch</a>
+        <a href="pages/contact.html" class="btn btn-primary">Get In Touch</a>
       </div>
     </div>
   </section>
@@ -570,7 +531,7 @@
   </section>
 
   <!-- ENGINEERING ARCHITECTURE SPOTLIGHT (3D Interactive Terminal) -->
-  <section class="py-12" style="background: linear-gradient(180deg, var(--color-bg-dark) 0%, rgba(8, 13, 36, 0.95) 100%);">
+  <section class="py-12" style="background: rgba(15, 23, 42, 0.45);">
     <div class="container">
       <div class="section-title scroll-animate">
         <h2>Engineering Architecture</h2>
@@ -653,7 +614,7 @@
   </section>
 
   <!-- FEATURED PROJECTS SPOTLIGHT (With Realistic Previews) -->
-  <section class="section-preview" style="background: rgba(14, 22, 48, 0.45);">
+  <section class="section-preview" style="background: rgba(15, 23, 42, 0.4);">
     <div class="container">
       <div class="preview-header">
         <h2 class="preview-title"><span class="animated-gradient-text">Featured Projects</span></h2>
@@ -735,7 +696,7 @@
   </section>
 
   <!-- PUBLICATIONS & RESEARCH SPOTLIGHT -->
-  <section class="section-preview" style="background: rgba(99, 102, 241, 0.04);">
+  <section class="section-preview" style="background: rgba(14, 165, 233, 0.02);">
     <div class="container">
       <div class="preview-header">
         <h2 class="preview-title"><span class="animated-gradient-text">Publications & Research</span></h2>
@@ -955,11 +916,10 @@
         canvas.height = 400;
         const ctx = canvas.getContext('2d');
 
-        // Royal gradient background
+        // Clean tech gradient background
         const gradient = ctx.createLinearGradient(0, 0, 400, 400);
-        gradient.addColorStop(0, '#1d4ed8');
-        gradient.addColorStop(0.5, '#7c3aed');
-        gradient.addColorStop(1, '#fbbf24');
+        gradient.addColorStop(0, '#0284c7');
+        gradient.addColorStop(1, '#0ea5e9');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 400, 400);
 
