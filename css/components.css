@@ -2070,7 +2070,7 @@
 }
 
 .abstract-content.open {
-    max-height: 350px;
+    max-height: 650px;
     padding: 0.85rem 1rem;
     margin-top: 0.75rem;
     border: 1px solid #e2e8f0;
@@ -2081,4 +2081,260 @@
     color: #475569;
     line-height: 1.6;
     margin: 0;
+}
+
+/* ===================================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
+   Optimized for all smartphones (360px - 768px)
+   =================================================== */
+
+/* Mobile Navigation CV Download Link */
+.nav-item-mobile-cv {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .nav-item-mobile-cv {
+        display: block !important;
+        margin-top: 0.75rem;
+        width: 100%;
+        background: #f0f9ff;
+        border: 1px dashed #00b4d8;
+        border-radius: 8px;
+        padding: 0.4rem 0.85rem;
+    }
+
+    .nav-item-mobile-cv a {
+        color: #0284c7 !important;
+        font-weight: 700 !important;
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero Section Mobile Perfection */
+    .clean-hero-wrapper {
+        padding: 5.5rem 1rem 2.25rem;
+        min-height: auto;
+    }
+
+    .clean-hero-container {
+        gap: 2.25rem;
+    }
+
+    .clean-hero-title {
+        font-size: clamp(2rem, 7.5vw, 2.75rem);
+        letter-spacing: -0.8px;
+        line-height: 1.15;
+    }
+
+    .clean-hero-accent-bar {
+        margin-bottom: 1.25rem;
+    }
+
+    .clean-hero-name-divider {
+        margin-bottom: 1.25rem;
+    }
+
+    .clean-hero-name {
+        font-size: 0.78rem;
+        letter-spacing: 1.8px;
+    }
+
+    .clean-hero-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+    }
+
+    .clean-hero-tags {
+        gap: 0.35rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .clean-hero-tag {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.65rem;
+    }
+
+    .clean-hero-actions {
+        width: 100%;
+        gap: 0.65rem;
+        flex-direction: column;
+    }
+
+    .btn-solid-dark,
+    .btn-outline-soft {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1.4rem;
+        font-size: 0.92rem;
+        text-align: center;
+    }
+
+    .clean-hero-visual {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .clean-photo-frame {
+        max-width: 290px;
+        border-radius: 1.5rem;
+    }
+
+    .clean-photo-img {
+        height: 310px;
+    }
+
+    .clean-visual-backdrop {
+        display: none;
+    }
+
+    .clean-photo-status {
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.25rem 0.7rem;
+        font-size: 0.7rem;
+    }
+
+    .clean-exp-floating-badge {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        margin: 1rem auto 0 !important;
+        width: fit-content;
+        max-width: 100%;
+        padding: 0.75rem 1.15rem;
+        border-radius: 1rem;
+    }
+
+    .clean-exp-number {
+        font-size: 1.75rem;
+    }
+
+    .clean-exp-title {
+        font-size: 0.82rem;
+    }
+
+    /* Mariners Group Spotlight on Mobile */
+    .mariners-spotlight-card {
+        padding: 1.25rem 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .mariners-spotlight-header {
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .mariners-company-info {
+        gap: 0.75rem;
+    }
+
+    .mariners-company-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .mariners-company-title {
+        font-size: 1.15rem;
+    }
+
+    .mariners-company-role {
+        font-size: 0.82rem;
+    }
+
+    .mariners-desc {
+        font-size: 0.88rem;
+        line-height: 1.55;
+        margin: 1rem 0;
+    }
+
+    .mariners-arch-flow {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+    }
+
+    .arch-node {
+        padding: 0.85rem;
+        border-radius: 0.85rem;
+    }
+
+    .arch-node-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.45rem;
+    }
+
+    .arch-node-chips span {
+        white-space: normal;
+        word-break: break-word;
+        font-size: 0.72rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Projects & Browser Mockup on Mobile */
+    .browser-screen img,
+    .browser-screen .project-image {
+        height: 185px;
+    }
+
+    .project-info {
+        padding: 1.15rem 1rem;
+    }
+
+    .project-title {
+        font-size: 1.15rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+        line-height: 1.55;
+    }
+
+    /* Toast Notification on Mobile */
+    .toast-notification {
+        width: calc(100% - 2rem);
+        max-width: 350px;
+        font-size: 0.78rem;
+        padding: 0.65rem 1rem;
+        bottom: 1.25rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Harold About Section Mobile */
+    .harold-about-wrapper {
+        padding: 1.25rem 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .harold-info-grid {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+    }
+
+    .harold-info-item {
+        padding: 0.75rem 0.9rem;
+    }
+
+    /* CTA Section Mobile */
+    .cta-section {
+        padding: 2.25rem 1.25rem;
+        margin: 2.5rem 0.75rem;
+        border-radius: 1.25rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
 }

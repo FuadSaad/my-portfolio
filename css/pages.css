@@ -809,11 +809,24 @@
 
 @media (max-width: 480px) {
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .stats-grid .stat-card:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+
+    .stat-card {
+        padding: 1rem 0.75rem;
     }
 
     .stat-number {
-        font-size: 2.25rem;
+        font-size: 1.85rem;
+    }
+
+    .stat-label {
+        font-size: 0.78rem;
     }
 
     .section-preview {
@@ -1307,4 +1320,168 @@
     border-radius: 6px;
     color: #334155;
     font-family: var(--font-code);
+}
+
+/* ===================================================
+   MOBILE RESPONSIVENESS OVERRIDES (360px - 768px)
+   =================================================== */
+@media (max-width: 768px) {
+    /* Skills Page Modern Cards */
+    .skills-modern-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .skill-modern-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 1rem !important;
+    }
+
+    .skill-card-top {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .skill-header-left {
+        gap: 0.65rem;
+    }
+
+    .skill-icon-modern {
+        width: 38px;
+        height: 38px;
+    }
+
+    .skill-icon-modern svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* References Page */
+    .references-section {
+        margin-top: 2.5rem !important;
+        padding-top: 0.5rem !important;
+    }
+
+    .reference-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .reference-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 1rem !important;
+    }
+
+    /* Research Page */
+    .research-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .research-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 1rem !important;
+    }
+
+    .research-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .research-badge {
+        align-self: flex-start;
+    }
+
+    .bibtex-code {
+        font-size: 0.72rem !important;
+        padding: 0.85rem !important;
+    }
+
+    /* Projects Page Filters */
+    .project-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        justify-content: center;
+        margin-bottom: 1.75rem;
+    }
+
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 0.45rem 0.85rem;
+    }
+
+    /* Contact Page */
+    .contact-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.25rem 1rem !important;
+        border-radius: 1rem !important;
+    }
+
+    .contact-info-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 1rem !important;
+    }
+
+    /* Education & Certifications */
+    .education-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .education-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Deep mobile tweaks (360px - 480px) */
+    .skill-category-header {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-category-header h3 {
+        font-size: 1.18rem !important;
+    }
+
+    .skill-modern-name {
+        font-size: 1.02rem;
+    }
+
+    .skill-tier-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .reference-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .reference-name {
+        font-size: 1.1rem;
+    }
+
+    .reference-designation {
+        font-size: 0.72rem;
+    }
+
+    .reference-email-btn {
+        font-size: 0.82rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    .projects-search-bar {
+        padding: 0.65rem 0.85rem !important;
+        font-size: 0.88rem !important;
+    }
 }
