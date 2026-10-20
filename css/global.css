@@ -1,59 +1,58 @@
 /* ============================================
    GLOBAL STYLES & DESIGN SYSTEM
-   Royal Luxury Tech & Academic Portfolio
+   Harold Clean Developer Portfolio Theme
    ============================================ */
 
-/* ----- Google Fonts ----- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* ----- Google Fonts (Poppins & Inter) ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
 
 /* ----- CSS Variables / Design Tokens ----- */
 :root {
-  /* Colors - Modern Software Engineer Palette */
-  --color-primary: #0ea5e9;          /* Tech Sky Cyan */
-  --color-primary-dark: #0284c7;     /* Deep Tech Blue */
-  --color-primary-light: #38bdf8;    /* Electric Cyan Highlight */
+  /* Harold Clean Developer Palette (Light Mode) */
+  --color-primary: #00b4d8;          /* Harold Signature Cyan */
+  --color-primary-dark: #0096c7;     /* Deep Cyan */
+  --color-primary-light: #0284c7;    /* Readable Deep Sky Blue */
   
-  --color-secondary: #6366f1;        /* Modern Indigo */
-  --color-secondary-dark: #4f46e5;   /* Deep Indigo */
-  --color-secondary-light: #818cf8;  /* Light Indigo */
+  --color-secondary: #0ea5e9;        /* Sky Blue */
+  --color-secondary-dark: #0284c7;   /* Deep Blue */
+  --color-secondary-light: #0369a1;  /* Rich Blue */
 
-  --color-cyan: #06b6d4;             /* Terminal Cyan */
-  --color-cyan-light: #38bdf8;       /* Ice Blue */
-  --color-emerald: #10b981;          /* Terminal Green */
+  --color-cyan: #00b4d8;             /* Cyan */
+  --color-emerald: #10b981;          /* Active Status Green */
   --color-amber: #f59e0b;            /* Warning Amber */
 
-  /* Dark Canvas - Clean Obsidian Slate */
-  --color-bg-dark: #0a0e17;
-  --color-bg-dark-secondary: #0f172a;
-  --color-bg-dark-tertiary: #1e293b;
-  --color-card-surface: rgba(15, 23, 42, 0.75);
-  --color-card-border: rgba(255, 255, 255, 0.08);
-  --color-card-border-hover: rgba(56, 189, 248, 0.35);
+  /* Light Canvas - Harold Clean Crisp Slate */
+  --color-bg-dark: #f8fafc;
+  --color-bg-dark-secondary: #ffffff;
+  --color-bg-dark-tertiary: #f1f5f9;
+  --color-card-surface: #ffffff;
+  --color-card-border: #e2e8f0;
+  --color-card-border-hover: rgba(0, 180, 216, 0.45);
 
   --color-bg-light: #ffffff;
   --color-bg-light-secondary: #f8fafc;
   --color-bg-light-tertiary: #e2e8f0;
 
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
+  --color-text-primary: #0f172a;     /* Deep Obsidian Slate 900 */
+  --color-text-secondary: #475569;   /* Slate 600 */
+  --color-text-muted: #64748b;       /* Slate 500 */
   --color-text-dark: #0f172a;
 
   --color-success: #10b981;
   --color-error: #ef4444;
   --color-warning: #f59e0b;
 
-  /* Clean Engineer Gradients & Surfaces */
-  --gradient-royal: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-  --gradient-royal-text: linear-gradient(135deg, #ffffff 40%, #7dd3fc 100%);
-  --gradient-gold: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-  --gradient-gold-text: #f8fafc;
-  --gradient-obsidian-card: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 14, 26, 0.95) 100%);
-  --gradient-card-top-border: linear-gradient(90deg, transparent 0%, #0ea5e9 50%, transparent 100%);
+  /* Harold Surface Gradients */
+  --gradient-royal: linear-gradient(135deg, #0096c7 0%, #00b4d8 100%);
+  --gradient-royal-text: #0f172a;
+  --gradient-gold: linear-gradient(135deg, #0096c7 0%, #00b4d8 100%);
+  --gradient-gold-text: #0f172a;
+  --gradient-obsidian-card: #ffffff;
+  --gradient-card-top-border: linear-gradient(90deg, transparent 0%, #00b4d8 50%, transparent 100%);
 
-  /* Typography */
-  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
-  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  /* Typography - Poppins Heading & Inter Body */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', 'Inter', -apple-system, sans-serif;
   --font-code: 'Fira Code', 'JetBrains Mono', monospace;
 
   --font-size-xs: 0.75rem;    /* 12px */
@@ -80,15 +79,15 @@
   --space-16: 8rem;     /* 128px */
 
   /* Shadows & Tech Accents */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
-  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.25);
-  --shadow-glow-royal: 0 0 25px rgba(2, 132, 199, 0.3);
-  --shadow-glow-gold: 0 0 20px rgba(56, 189, 248, 0.25);
-  --shadow-glow-amethyst: 0 0 20px rgba(99, 102, 241, 0.25);
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.03);
+  --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 20px rgba(0, 180, 216, 0.18);
+  --shadow-glow-royal: 0 0 25px rgba(0, 150, 199, 0.18);
+  --shadow-glow-gold: 0 0 20px rgba(0, 180, 216, 0.18);
+  --shadow-glow-amethyst: 0 0 20px rgba(99, 102, 241, 0.18);
 
   /* Border Radius */
   --radius-sm: 0.25rem;  /* 4px */
@@ -128,10 +127,10 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--color-text-primary);
-  background-color: var(--color-bg-dark);
+  background-color: #f8fafc;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(14, 165, 233, 0.12) 0%, transparent 60%),
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0, 180, 216, 0.08) 0%, transparent 60%),
+    radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 28px 28px;
   background-attachment: fixed;
   overflow-x: hidden;
@@ -257,7 +256,7 @@ a:hover {
 .py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
 .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
 .py-10 { padding-top: var(--space-10); padding-bottom: var(--space-10); }
-.py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.py-12 { padding-top: 3.25rem; padding-bottom: 3.25rem; }
 
 .px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
 .px-6 { padding-left: var(--space-6); padding-right: var(--space-6); }
@@ -273,12 +272,13 @@ a:hover {
 .text-muted { color: var(--color-text-muted); }
 
 /* Backgrounds */
+/* Backgrounds */
 .bg-glass {
   background: var(--color-card-surface);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--color-card-border);
-  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
 }
 
 .bg-gradient {
@@ -287,7 +287,7 @@ a:hover {
 
 /* Section Styling */
 section {
-  padding: var(--space-12) 0;
+  padding: 3.25rem 0;
   position: relative;
 }
 
@@ -300,24 +300,21 @@ section {
   width: 100%;
   font-weight: 800;
   letter-spacing: -0.5px;
-  background: var(--gradient-royal-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
 }
 
 .section-title::after {
   content: '';
   display: block;
-  width: 50px;
+  width: 48px;
   height: 3px;
   background: var(--color-primary);
   margin: var(--space-4) auto 0;
   border-radius: var(--radius-full);
-  box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.35);
 }
 
-/* Buttons - Clean Software Engineer Aesthetic */
+/* Buttons - Clean Software Engineer Aesthetic (Harold Light Mode) */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -339,10 +336,11 @@ section {
 }
 
 .btn-primary {
-  background: #0284c7;
+  background: #00b4d8;
   color: #ffffff;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  border: 1px solid #0096c7;
+  box-shadow: 0 4px 14px rgba(0, 180, 216, 0.32);
+  font-weight: 600;
 }
 
 .btn-primary::before {
@@ -352,14 +350,14 @@ section {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   transition: left 0.5s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: #0ea5e9;
-  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.45);
+  background: #0096c7;
+  box-shadow: 0 6px 22px rgba(0, 180, 216, 0.45);
   color: #ffffff;
 }
 
@@ -368,20 +366,19 @@ section {
 }
 
 .btn-secondary {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  font-weight: 500;
 }
 
 .btn-secondary:hover {
-  background: rgba(30, 41, 59, 0.9);
-  color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.5);
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #00b4d8;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08), 0 0 10px rgba(0, 180, 216, 0.15);
 }
 
 .btn-icon {
@@ -394,14 +391,12 @@ section {
   border-radius: var(--radius-full);
 }
 
-/* Cards - Obsidian Slate Tech Surface */
+/* Cards - Pure Crisp White Tech Surface */
 .card {
-  background: var(--gradient-obsidian-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #ffffff;
   border-radius: var(--radius-xl);
   padding: var(--space-6);
-  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
   transition: all var(--transition-base);
   border: 1px solid var(--color-card-border);
   position: relative;
@@ -410,16 +405,14 @@ section {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.08), 0 0 16px rgba(0, 180, 216, 0.12);
   border-color: var(--color-card-border-hover);
 }
 
 .card-glass {
-  background: var(--gradient-obsidian-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: #ffffff;
   border: 1px solid var(--color-card-border);
-  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
 }
 
 /* Badges & Tech Accents */
@@ -437,20 +430,20 @@ section {
 
 .badge-gold {
   background: rgba(245, 158, 11, 0.1);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 .badge-sapphire {
-  background: rgba(14, 165, 233, 0.1);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(0, 180, 216, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(0, 180, 216, 0.25);
 }
 
 .badge-amethyst {
   background: rgba(99, 102, 241, 0.1);
-  color: #a5b4fc;
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #4f46e5;
+  border: 1px solid rgba(99, 102, 241, 0.25);
 }
 
 /* Animations */

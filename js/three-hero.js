@@ -58,10 +58,10 @@
         nodeGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
         const nodeMat = new THREE.PointsMaterial({
-            color: 0x38bdf8,
-            size: 0.09,
+            color: 0x0284c7,
+            size: 0.11,
             transparent: true,
-            opacity: 0.55
+            opacity: 0.7
         });
         const nodeMesh = new THREE.Points(nodeGeo, nodeMat);
         graphGroup.add(nodeMesh);
@@ -73,10 +73,10 @@
         lineGeo.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
 
         const lineMat = new THREE.LineBasicMaterial({
-            color: 0x0ea5e9,
+            color: 0x0284c7,
             transparent: true,
-            opacity: 0.14,
-            blending: THREE.AdditiveBlending
+            opacity: 0.22,
+            blending: THREE.NormalBlending
         });
         const lineMesh = new THREE.LineSegments(lineGeo, lineMat);
         graphGroup.add(lineMesh);

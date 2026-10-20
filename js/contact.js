@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // UI Loading State
-        const originalBtnText = btnText ? btnText.textContent : 'Send Message 📨';
+        const originalBtnText = btnText ? btnText.textContent : 'Send Message';
         if (submitBtn) submitBtn.disabled = true;
-        if (btnText) btnText.textContent = 'Sending Message... ⏳';
+        if (btnText) btnText.textContent = 'Sending Message...';
         if (errorMessage) errorMessage.style.display = 'none';
 
         // Prepare submission payload

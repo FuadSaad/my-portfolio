@@ -145,12 +145,21 @@ function renderResearch(filter = 'all') {
             <span class="badge ${badgeClass}">${item.status}</span>
             <h3 class="research-title">${item.title}</h3>
             <div class="research-venue">${item.venue}</div>
-            <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+            <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;">
                 ${item.description}
             </p>
             <ul class="research-points">
                 ${item.keyHighlights.slice(0, 2).map(pt => `<li>${pt}</li>`).join('')}
             </ul>
+            <div style="margin: 0.5rem 0 1rem;">
+                <button type="button" class="abstract-toggle-btn" onclick="event.stopPropagation(); window.toggleAbstract(${item.id}, this)">
+                    <span>Read Abstract</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="abstract-content" id="abstract-${item.id}" onclick="event.stopPropagation()">
+                    <p>${item.fullDescription}</p>
+                </div>
+            </div>
             <div class="project-tags" style="margin-top: auto;">
                 ${item.tags.map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
@@ -200,8 +209,9 @@ function openResearchModal(item) {
         </div>
         
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-primary">
-                View GitHub Profile &#128187;
+            <a href="${item.link}" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                <span>View GitHub Profile</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
         </div>
     `;
@@ -216,6 +226,22 @@ function closeResearchModal() {
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
+
+window.toggleAbstract = function (id, btn) {
+    const content = document.getElementById(`abstract-${id}`);
+    if (!content) return;
+
+    const isOpen = content.classList.contains('open');
+    if (isOpen) {
+        content.classList.remove('open');
+        btn.classList.remove('active');
+        btn.querySelector('span').textContent = 'Read Abstract';
+    } else {
+        content.classList.add('open');
+        btn.classList.add('active');
+        btn.querySelector('span').textContent = 'Hide Abstract';
+    }
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     renderResearch('all');

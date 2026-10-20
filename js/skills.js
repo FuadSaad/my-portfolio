@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, observerOptions);
 
     // Observe all skill cards
-    const skillCards = document.querySelectorAll('.skill-card');
+    const skillCards = document.querySelectorAll('.skill-card, .skill-modern-card');
     skillCards.forEach(card => {
         skillObserver.observe(card);
     });
@@ -45,15 +45,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add hover effect to skill cards
     skillCards.forEach(card => {
         card.addEventListener('mouseenter', function () {
-            const icon = this.querySelector('.skill-icon');
+            const icon = this.querySelector('.skill-icon, .skill-icon-modern');
             if (icon) {
-                icon.style.transform = 'scale(1.2) rotate(5deg)';
+                icon.style.transform = 'scale(1.15) rotate(4deg)';
                 icon.style.transition = 'transform 0.3s ease';
             }
         });
 
         card.addEventListener('mouseleave', function () {
-            const icon = this.querySelector('.skill-icon');
+            const icon = this.querySelector('.skill-icon, .skill-icon-modern');
             if (icon) {
                 icon.style.transform = 'scale(1) rotate(0deg)';
             }

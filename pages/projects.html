@@ -4,11 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Featured Projects &amp; Systems | Md Fuad Hossain Saad</title>
+    <meta name="title" content="Featured Projects &amp; Systems | Md Fuad Hossain Saad">
     <meta name="description"
-        content="Research, machine learning, mobile, and web development projects by Md Fuad Hossain Saad">
-    <meta name="keywords" content="projects, research, machine learning, flutter, mobile apps, web development, DIU">
+        content="Production enterprise systems, web platforms, and mobile apps engineered by Md Fuad Hossain Saad: BridgeOne CRM, MOHS Venice City, Marine Shadi, HealthScope, and OpenGL simulations.">
+    <meta name="keywords" content="Projects, Next.js, Node.js, Flutter, Supabase, PostgreSQL, CRM, Real Estate, Matrimony, Md Fuad Hossain Saad">
+    <meta name="author" content="Md Fuad Hossain Saad">
+    <meta name="theme-color" content="#00b4d8">
 
-    <title>Projects & Research | Md Fuad Hossain Saad</title>
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fuadsaad.github.io/my-portfolio/pages/projects.html">
+    <meta property="og:site_name" content="Md Fuad Hossain Saad Portfolio">
+    <meta property="og:title" content="Featured Projects &amp; Systems | Md Fuad Hossain Saad">
+    <meta property="og:description"
+        content="Explore live production applications, enterprise sales pipelines, and cross-platform apps built by Md Fuad Hossain Saad.">
+    <meta property="og:image" content="https://fuadsaad.github.io/my-portfolio/assets/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fuadsaad.github.io/my-portfolio/pages/projects.html">
+    <meta name="twitter:title" content="Featured Projects &amp; Systems | Md Fuad Hossain Saad">
+    <meta name="twitter:description"
+        content="Explore live production applications, enterprise sales pipelines, and cross-platform apps built by Md Fuad Hossain Saad.">
+    <meta name="twitter:image" content="https://fuadsaad.github.io/my-portfolio/assets/og-preview.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -24,7 +46,7 @@
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="navbar-brand">Fuad</a>
+            <a href="../index.html" class="navbar-brand">Fuad<span style="color: #00b4d8;">.</span></a>
 
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -36,11 +58,18 @@
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
                 <li class="nav-item"><a href="research.html" class="nav-link">Research</a></li>
                 <li class="nav-item"><a href="experience.html" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
+
+            <div class="navbar-actions">
+                <a href="../assets/Md_Fuad_Hossain_Saad_Resume.pdf" target="_blank" rel="noopener" download="Md_Fuad_Hossain_Saad_Resume.pdf" class="navbar-cv-btn" title="Download Official Curriculum Vitae">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Resume / CV</span>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -48,13 +77,25 @@
     <section class="py-12" style="margin-top: 80px;">
         <div class="container">
             <h2 class="section-title scroll-animate">Software & System Projects</h2>
+            <p class="section-subtitle scroll-animate" style="text-align: center; color: var(--color-text-secondary); max-width: 680px; margin: -1.25rem auto 2rem; font-size: 1.05rem; line-height: 1.6;">
+                Enterprise web platforms, cloud-deployed systems, and cross-platform mobile applications for Android &amp; iOS.
+            </p>
+
+            <!-- LIVE SEARCH BAR -->
+            <div class="project-search-wrapper scroll-animate">
+                <div class="project-search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="projectSearchInput" placeholder="Search by project name or tech (e.g. Next.js, Flutter, Supabase)..." aria-label="Search projects">
+                    <button id="clearSearchBtn" class="clear-search-btn" style="display: none;" aria-label="Clear search">&times;</button>
+                </div>
+            </div>
 
             <!-- FILTER BUTTONS -->
-            <div class="project-filters scroll-animate">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="systems">Graphics & Systems</button>
+            <div class="project-filters scroll-animate" id="projectFiltersContainer">
+                <button class="filter-btn active" data-filter="all">All Projects <span class="filter-count" id="count-all">8</span></button>
+                <button class="filter-btn" data-filter="web">Web Apps <span class="filter-count" id="count-web">4</span></button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps <span class="filter-count" id="count-mobile">2</span></button>
+                <button class="filter-btn" data-filter="systems">Graphics & Systems <span class="filter-count" id="count-systems">2</span></button>
             </div>
 
             <!-- PROJECTS GRID -->
@@ -74,27 +115,36 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">Portfolio</div>
+                <div style="text-align: center; margin-bottom: 0.25rem;">
+                    <div style="font-size: 1.5rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">Md Fuad Hossain Saad</div>
+                    <div style="font-size: 0.85rem; color: #38bdf8; font-family: var(--font-code); margin-top: 0.35rem;">
+                        Junior Software &amp; Web Developer @ Mariners Group &bull; AI &amp; ML Researcher
+                    </div>
+                </div>
 
                 <ul class="footer-social">
-                    <li><a href="https://github.com/FuadSaad" target="_blank" rel="noopener" class="social-link"
-                            aria-label="GitHub" title="GitHub">
-                            <span>&#128187;</span>
-                        </a></li>
-                    <li><a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link"
-                            aria-label="LinkedIn" title="LinkedIn">
-                            <span>&#128101;</span>
-                        </a></li>
-                    <li><a href="https://twitter.com" target="_blank" rel="noopener" class="social-link"
-                            aria-label="Twitter" title="Twitter">
-                            <span>&#128038;</span>
-                        </a></li>
-                    <li><a href="mailto:contactwithfuad@gmail.com" class="social-link" aria-label="Email" title="Email">
-                            <span>&#128231;</span>
-                        </a></li>
+                    <li><a href="https://github.com/FuadSaad" target="_blank" rel="noopener" class="social-link" aria-label="GitHub" title="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/md-fuad-hossain-saad-32868043b/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a></li>
+                    <li><a href="mailto:contactwithfuad@gmail.com" class="social-link" aria-label="Email" title="Copy Email Address" data-copy-email data-email="contactwithfuad@gmail.com">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    </a></li>
                 </ul>
 
-                <p class="footer-text">&copy; 2026 Md Fuad Hossain Saad. All rights reserved.</p>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; font-size: 0.88rem; color: var(--color-text-secondary); margin: 0.5rem 0;">
+                    <a href="../index.html" style="color: inherit;">Home</a>
+                    <a href="about.html" style="color: inherit;">About</a>
+                    <a href="skills.html" style="color: inherit;">Skills</a>
+                    <a href="projects.html" style="color: inherit;">Projects</a>
+                    <a href="research.html" style="color: inherit;">Research</a>
+                    <a href="experience.html" style="color: inherit;">Experience</a>
+                    <a href="contact.html" style="color: inherit;">Contact</a>
+                </div>
+
+                <p class="footer-text">&copy; 2026 Md Fuad Hossain Saad. All rights reserved. &bull; Engineered with modern web standards.</p>
             </div>
         </div>
     </footer>

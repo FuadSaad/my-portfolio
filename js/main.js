@@ -143,3 +143,72 @@ function scrollToElement(elementId) {
     });
   }
 }
+
+// ----- TOAST NOTIFICATION & COPY EMAIL -----
+function showToastNotification(message = 'Email copied to clipboard!') {
+  let toast = document.getElementById('globalToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'globalToast';
+    toast.className = 'toast-notification';
+    toast.innerHTML = `
+      <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <span id="toastMsg">${message}</span>
+    `;
+    document.body.appendChild(toast);
+  } else {
+    const msgEl = document.getElementById('toastMsg');
+    if (msgEl) msgEl.textContent = message;
+  }
+
+  requestAnimationFrame(() => {
+    toast.classList.add('show');
+  });
+
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2800);
+}
+
+function copyEmailToClipboard(email = 'contactwithfuad@gmail.com') {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(() => {
+      showToastNotification(`Copied ${email} to clipboard!`);
+    }).catch(() => {
+      fallbackCopyText(email);
+    });
+  } else {
+    fallbackCopyText(email);
+  }
+}
+
+function fallbackCopyText(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.top = '-9999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showToastNotification(`Copied ${text} to clipboard!`);
+  } catch (err) {
+    showToastNotification(`Email: ${text}`);
+  }
+  document.body.removeChild(textArea);
+}
+
+// Auto-attach to all copy email triggers
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-copy-email], .copy-email-trigger');
+  if (btn) {
+    e.preventDefault();
+    const email = btn.getAttribute('data-email') || 'contactwithfuad@gmail.com';
+    copyEmailToClipboard(email);
+  }
+});
